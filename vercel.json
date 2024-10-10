@@ -1,6 +1,5 @@
 {
-    "rewrites": [
-      { "source": "/api", "destination": "http://34.27.240.80:1207/convidados/confirmar" }
-    ]
-  }
-  
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "http://34.27.240.80:1207/$1" }
+  ]
+}

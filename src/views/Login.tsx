@@ -78,15 +78,6 @@ function Login() {
             <span className={styles.checkBoxSpan}>Um Pix Misterioso</span>
           </label>
         </div>
-
-        {valorSelecionado === "Um Pacote de Fralda(M, G) + Mimo" ? (
-          <InputText
-            control={control}
-            name={"presente"}
-            label={"Qual será o presente:"}
-            type={"text"}
-          />
-        ) : null}
         {valorSelecionado === "Um Pix Misterioso" ? (
           <div className={styles.containerPix}>
             <QRCode
@@ -118,7 +109,7 @@ function Login() {
           style={{ marginTop: 48, marginBottom: 26, background: "#FFF0E3" }}
           label="Confirmar Presença "
           onClick={async () => {
-            await fetch('/api', {
+            await fetch("/api/confirmacao/confirmar", {
               method: "POST",
               body: JSON.stringify({
                 ...getValues(),
