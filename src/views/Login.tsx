@@ -21,7 +21,8 @@ function Login() {
   const [valorSelecionado, setValorSelecionado] = useState(
     "Um Pacote de Fralda(M, G) + Mimo"
   );
-  const handleChange = (event) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleChange = (event: any) => {
     setValorSelecionado(event.target.value);
   };
 
