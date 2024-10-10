@@ -1,0 +1,16 @@
+body {
+  background-color: rgba(255, 240, 227, 1);
+  background-image: url(assets/Fundo.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 425px) {
+  body {
+    background-color: rgba(255, 240, 227, 1);
+    background-image: none;
+  }
+}
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+}

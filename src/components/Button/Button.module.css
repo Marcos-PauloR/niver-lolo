@@ -1,0 +1,21 @@
+.ghost-button {
+    display: inline-block;
+    font-family: "Poppins", sans-serif;
+    width: 180px;
+    font-size: medium;
+    padding: 8px;
+    color: rgba(123, 142, 117, 1);
+    border: 1px solid rgba(123, 142, 117, 1);
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    border-radius: 100px;
+    transition: width 0.3s ease-out, height 0.3s ease-out, line-height 0.3s ease-out;
+}
+
+.ghost-button:hover,
+.ghost-button:active {
+    width: 194px;
+    line-height: 25px;
+    transition: width 0.1s ease-in, height 0.1s ease-in, line-height 0.1s ease-in;
+}
