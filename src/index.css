@@ -1,6 +1,6 @@
 body {
   background-color: rgba(255, 240, 227, 1);
-  background-image: url(assets/Fundo.svg);
+  background-image: url(/public/assets/Fundo.svg);
   background-repeat: no-repeat;
   background-size: cover;
 }

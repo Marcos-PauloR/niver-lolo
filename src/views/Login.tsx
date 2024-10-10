@@ -35,7 +35,7 @@ function Login() {
         <nav>
           <img src="assets/Logo.svg" alt="" className={styles.logo} />
         </nav>
-        <img src="ssets/Line.svg" className={styles.linha} />
+        <img src="assets/Line.svg" className={styles.linha} />
         <h1 className={styles.titleh1}>Por Favor Confirme sua presença</h1>
         <h3 className={styles.titleh6}>Por Favor Confirme sua presença</h3>
       </div>
