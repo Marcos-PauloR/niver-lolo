@@ -118,7 +118,7 @@ function Login() {
           style={{ marginTop: 48, marginBottom: 26, background: "#FFF0E3" }}
           label="Confirmar Presença "
           onClick={async () => {
-            await fetch(import.meta.env.VITE_URL_BACK, {
+            await fetch('/api', {
               method: "POST",
               body: JSON.stringify({
                 ...getValues(),
