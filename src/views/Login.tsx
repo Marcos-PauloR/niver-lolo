@@ -123,7 +123,9 @@ function Login() {
               }),
             }).then((response) => {
               if (response.status == 201)
-                toast("Presença Confirmada, Muito Obrigado pelo Carinho!", {});
+                toast("Presença Confirmada, Muito Obrigado pelo Carinho!", {
+                  icon: "🎉",
+                });
             });
           }}
         />
