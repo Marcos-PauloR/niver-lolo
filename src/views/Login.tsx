@@ -21,9 +21,9 @@ function Login() {
   const [valorSelecionado, setValorSelecionado] = useState(
     "Um Pacote de Fralda(M, G) + Mimo"
   );
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const handleChange = (event: any) => {
-    setValorSelecionado(event.target.value);
+
+  const handleChange = (e: string) => {
+    setValorSelecionado(e);
   };
 
   return (
@@ -62,7 +62,7 @@ function Login() {
               type="radio"
               value="Um Pacote de Fralda(M, G) + Mimo"
               checked={valorSelecionado === "Um Pacote de Fralda(M, G) + Mimo"}
-              onChange={handleChange}
+              onChange={(e) => handleChange(e.target.value)}
             />
             <span className={styles.checkBoxSpan}>
               Pacote de Fralda M ou G + Mimo
@@ -73,7 +73,7 @@ function Login() {
               type="radio"
               value="Um Pix Misterioso"
               checked={valorSelecionado === "Um Pix Misterioso"}
-              onChange={handleChange}
+              onChange={(e) => handleChange(e.target.value)}
             />
             <span className={styles.checkBoxSpan}>Um Pix Misterioso</span>
           </label>
