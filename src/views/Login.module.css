@@ -107,4 +107,7 @@
     visibility: visible;
     margin: 21px 0;
   }
+  .form {
+    margin-top: 12px;
+  }
 }
