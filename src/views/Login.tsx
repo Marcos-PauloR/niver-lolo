@@ -109,7 +109,7 @@ function Login() {
           style={{ marginTop: 48, marginBottom: 26, background: "#FFF0E3" }}
           label="Confirmar Presença "
           onClick={async () => {
-            await fetch("/api/confirmacao/confirmar", {
+            await fetch("/api/confirmar", {
               method: "POST",
               body: JSON.stringify({
                 ...getValues(),
