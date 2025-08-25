@@ -1,0 +1,76 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  /* min-height: 100dvh;
+  height: auto; */
+
+  /* width: 950px; */
+  z-index: 1;
+}
+
+.logo {
+  width: clamp(400px, 40vw, 600px);
+}
+
+.titleh1 {
+  font-family: "Questrial", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #86b5b9;
+  font-size: clamp(1rem, 6vw, 2rem);
+  margin: 0.5em 0;
+  text-align: center;
+}
+
+.checkBoxSpan {
+  font-family: "Preahvihear", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #f7aa95;
+  height: 22px;
+}
+
+.checkBox.input {
+  border-radius: 50%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1rem;
+}
+
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.localSpan {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #86b5b9;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+}
+
+.line1 {
+  width: clamp(180px, 70vw, 296px);
+  border-top: 5px dotted #f7aa95;
+}
