@@ -7,6 +7,10 @@
     {
       "source": "/api/listar",
       "destination": "http://url/convidados/confirmar"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
