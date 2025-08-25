@@ -45,7 +45,7 @@ html {
   width: 450px;
   height: auto;
   pointer-events: none; /* Isso é o mais importante */
-  z-index: -1;
+  z-index: 1;
 }
 .decor-top-right {
   top: 20px;

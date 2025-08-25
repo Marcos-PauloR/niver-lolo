@@ -47,7 +47,7 @@ function Historia() {
         }}
         label="Confirmar Presença "
         onClick={async () => {
-          navigate("/login");
+          navigate("/confirmar");
         }}
       />
     </div>
