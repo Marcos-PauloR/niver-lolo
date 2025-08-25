@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/api/confirmar",
-      "destination": "http://34.27.240.80:1207/convidados/confirmar"
+      "destination": "http://url/convidados/confirmar"
     },
     {
       "source": "/api/listar",
-      "destination": "http://34.27.240.80:1207/convidados/confirmados"
+      "destination": "http://url/convidados/confirmar"
     }
   ]
 }
