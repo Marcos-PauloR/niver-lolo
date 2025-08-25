@@ -9,9 +9,9 @@ function AppRoutes() {
     <>
       <ScrollToTop />
       <Routes>
-        <Route Component={Formulario} path="/" />
+        <Route Component={Formulario} path="/confirmar" />
         <Route Component={Listagem} path="/lista" />
-        <Route Component={Historia} path="/confirmar" />
+        <Route Component={Historia} path="/" />
       </Routes>
     </>
   );
