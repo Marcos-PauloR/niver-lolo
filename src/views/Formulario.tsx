@@ -11,6 +11,7 @@ interface FormularioValue {
   acompanhates: number;
   presente: string;
   confirmado: boolean;
+  mensagem: string;
 }
 
 function Formulario() {
@@ -71,6 +72,7 @@ function Formulario() {
                 ...getValues(),
                 confirmado: true,
                 acompanhates: Number(getValues().acompanhates),
+                mensagem: getValues().mensagem.replace(/\r\n/g, "\n"),
               }),
               credentials: "include",
               headers: new Headers({
