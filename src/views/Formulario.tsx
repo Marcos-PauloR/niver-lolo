@@ -68,16 +68,16 @@ function Formulario() {
           onClick={async () => {
             await fetch("/api/confirmar", {
               method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              credentials: "include",
               body: JSON.stringify({
                 ...getValues(),
                 confirmado: true,
                 acompanhates: Number(getValues().acompanhates),
                 mensagem: getValues().mensagem.replace(/\r\n/g, "\n"),
-              }),
-              credentials: "include",
-              headers: new Headers({
-                "Content-Type": "application/json",
-                Accept: "application/json",
               }),
             }).then((response) => {
               if (response.status == 201)
