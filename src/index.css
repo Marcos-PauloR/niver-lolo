@@ -24,10 +24,10 @@ html {
     display: none;
   }
   .nuvem-right {
-    z-index: -1;
+    display: none;
   }
   .nuvem-left {
-    z-index: -1;
+    display: none;
   }
 }
 
