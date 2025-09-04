@@ -5,6 +5,7 @@ import Button from "../components/Button/Button";
 import TextArea from "../components/TextArea/TextArea";
 import toast, { Toaster } from "react-hot-toast";
 import Lista from "../components/Lista/Lista";
+import { error } from "console";
 
 interface FormularioValue {
   nome: string;
@@ -79,12 +80,16 @@ function Formulario() {
                 acompanhates: Number(getValues().acompanhates),
                 mensagem: getValues().mensagem.replace(/\r\n/g, "\n"),
               }),
-            }).then((response) => {
-              if (response.status == 201)
-                toast("Presença Confirmada, Muito Obrigado pelo Carinho!", {
-                  icon: "🎉",
-                });
-            });
+            })
+              .then((response) => {
+                if (response.status == 201)
+                  toast("Presença Confirmada, Muito Obrigado pelo Carinho!", {
+                    icon: "🎉",
+                  });
+              })
+              .catch((error) => {
+                toast("Erro:" + error.mensage);
+              });
           }}
         />
 
