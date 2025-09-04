@@ -5,7 +5,6 @@ import Button from "../components/Button/Button";
 import TextArea from "../components/TextArea/TextArea";
 import toast, { Toaster } from "react-hot-toast";
 import Lista from "../components/Lista/Lista";
-import { error } from "console";
 
 interface FormularioValue {
   nome: string;
