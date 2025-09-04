@@ -66,7 +66,7 @@ function Formulario() {
           style={{ marginTop: 12, marginBottom: 8, background: "#ecf0f1" }}
           label="Confirmar Presença "
           onClick={async () => {
-            await fetch("/api/convidados/confirmar", {
+            await fetch("/api/confirmar", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
