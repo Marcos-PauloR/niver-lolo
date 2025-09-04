@@ -87,7 +87,7 @@ function Formulario() {
                   });
               })
               .catch((error) => {
-                toast("Erro:" + error);
+                toast("Erro:" + error.message);
               });
           }}
         />
