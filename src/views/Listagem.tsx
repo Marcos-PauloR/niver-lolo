@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Listagem.module.css";
 
 const CORRECT_PASSWORD = "senha123";
-const API_URL = "/api/convidados/listar";
+const API_URL = "/api/convidados/confirmados";
 
 type CardProps = {
   acompanhates: number;
