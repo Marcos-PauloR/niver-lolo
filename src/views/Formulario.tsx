@@ -17,7 +17,7 @@ interface FormularioValue {
 }
 
 function Formulario() {
-  const { control, getValues, resetField } = useForm<FormularioValue>({
+  const { control, getValues, resetField, reset } = useForm<FormularioValue>({
     defaultValues: { acompanhates: "" },
   });
   const [listaAcompanhantes, setListaAcompanhantes] = useState<string[]>([]);
@@ -133,6 +133,8 @@ function Formulario() {
               .catch((error) => {
                 toast("Erro:" + error.message);
               });
+            reset({ acompanhates: "", mensagem: "", nome: "" });
+            setListaAcompanhantes([]);
           }}
         />
 
