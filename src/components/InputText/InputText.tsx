@@ -20,6 +20,8 @@ interface InputTextProps {
   type?: React.HTMLInputTypeAttribute | undefined;
   minValue?: string | number | undefined;
   maxValue?: string | number | undefined;
+  withButton?: boolean;
+  buttonClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
 const InputText: React.FC<InputTextProps> = ({
@@ -31,30 +33,43 @@ const InputText: React.FC<InputTextProps> = ({
   type,
   minValue,
   maxValue,
+  withButton,
+  buttonClick,
 }) => {
   return (
     <div className={styles.InputText}>
       <label htmlFor={name} className={styles.label}>
         {label}
       </label>
-      <Controller
-        name={name}
-        control={control}
-        rules={rules}
-        render={({ field, fieldState: { error } }) => (
-          <>
-            <input
-              {...field}
-              className={styles.input}
-              placeholder={placeholder}
-              min={minValue}
-              type={type}
-              max={maxValue}
-            />
-            {error && <span>{error.message}</span>}
-          </>
-        )}
-      />
+      <div className={styles.Input}>
+        <Controller
+          name={name}
+          control={control}
+          rules={rules}
+          render={({ field, fieldState: { error } }) => (
+            <>
+              <input
+                {...field}
+                className={styles.input}
+                placeholder={placeholder}
+                min={minValue}
+                type={type}
+                max={maxValue}
+              ></input>
+              {error && <span>{error.message}</span>}
+            </>
+          )}
+        />
+        {withButton ? (
+          <button
+            type="button"
+            onClick={buttonClick}
+            className={styles.ghostButton}
+          >
+            Adicionar
+          </button>
+        ) : null}
+      </div>
     </div>
   );
 };

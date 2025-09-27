@@ -1,21 +1,38 @@
 import { useForm } from "react-hook-form";
+import { FiMinus } from "react-icons/fi";
 import InputText from "../components/InputText/InputText";
 import styles from "./Formulario.module.css";
 import Button from "../components/Button/Button";
 import TextArea from "../components/TextArea/TextArea";
 import toast, { Toaster } from "react-hot-toast";
 import Lista from "../components/Lista/Lista";
+import { useState } from "react";
 
 interface FormularioValue {
   nome: string;
-  acompanhates: number;
+  acompanhates: string;
   presente: string;
   confirmado: boolean;
   mensagem: string;
 }
 
 function Formulario() {
-  const { control, getValues } = useForm<FormularioValue>();
+  const { control, getValues, resetField } = useForm<FormularioValue>({
+    defaultValues: { acompanhates: "" },
+  });
+  const [listaAcompanhantes, setListaAcompanhantes] = useState<string[]>([]);
+
+  const insereAcompanhante = () => {
+    const valor = getValues("acompanhates");
+    if (!valor) return;
+
+    setListaAcompanhantes((prev) => [...prev, valor]);
+    resetField("acompanhates", { defaultValue: "", keepTouched: true });
+  };
+
+  const removerDaLista = (index: number) => {
+    setListaAcompanhantes((prev) => prev.filter((_, i) => i !== index));
+  };
 
   const lista = [
     { icone: "📚", texto: "Livros Infantis" },
@@ -44,11 +61,37 @@ function Formulario() {
         <InputText
           control={control}
           name={"acompanhates"}
-          label={"Quantidade de Pessoas: (Incluindo você)"}
-          type={"number"}
-          minValue={0}
-          maxValue={5}
+          label={"Nome dos Acompanhantes:"}
+          type={"text"}
+          withButton
+          buttonClick={insereAcompanhante}
         />
+
+        <ul
+          style={{
+            width: 315,
+            maxWidth: 315,
+            margin: 0,
+            background: "#F5F5F5",
+            border: "solid 1px  #86B5B9",
+            borderRadius: 8,
+            paddingLeft: 20,
+          }}
+        >
+          {listaAcompanhantes.map((valor, index) => (
+            <li key={index} className={styles.texto}>
+              <span>{valor}</span>
+              <button
+                type="button"
+                className={styles.ghostButton}
+                onClick={() => removerDaLista(index)}
+              >
+                <FiMinus fontSize={45} />
+              </button>
+            </li>
+          ))}
+        </ul>
+
         <TextArea
           control={control}
           name={"mensagem"}
@@ -57,8 +100,8 @@ function Formulario() {
 
         <div>
           <h3 className={styles.titleh1}>Sugestões de presente</h3>
-          {lista.map((item) => (
-            <Lista texto={item.texto} icone={item.icone} />
+          {lista.map((item, index) => (
+            <Lista texto={item.texto} key={index} icone={item.icone} />
           ))}
         </div>
 
@@ -78,6 +121,7 @@ function Formulario() {
                 confirmado: true,
                 acompanhates: Number(getValues().acompanhates),
                 mensagem: getValues().mensagem.replace(/\r\n/g, "\n"),
+                companheiros: listaAcompanhantes,
               }),
             })
               .then((response) => {

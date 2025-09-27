@@ -29,3 +29,20 @@
   border-color: #ccc;
   outline: none;
 }
+
+.Input {
+  display: flex;
+  flex-direction: row;
+}
+
+.ghostButton {
+  border: none;
+  background: transparent;
+  color: #f7aa95;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 2px;
+}

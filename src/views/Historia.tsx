@@ -28,10 +28,6 @@ function Historia() {
         de tirar o fôlego: com nuvens que soltam confete, bolo com glitter
         comestível e unicórnios dançando ao som de risadas felizes.
       </p>
-      {/* <img
-        src="/public/assets/Nuvens.svg"
-        style={{ zIndex: -1, position: "absolute" }}
-      /> */}
       <p className={styles.titleh1}>
         E assim começa a linda história da princesa mais doce do reino dos
         unicórnios. E olha… esse é só o primeiro capítulo!

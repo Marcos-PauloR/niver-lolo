@@ -5,12 +5,12 @@ const CORRECT_PASSWORD = "senha123";
 const API_URL = "/api/confirmados";
 
 type CardProps = {
-  acompanhates: number;
+  companheiros: string[];
   nome: string;
   mensagem: string;
 };
 
-const Card = ({ nome, acompanhates, mensagem }: CardProps) => (
+const Card = ({ nome, companheiros, mensagem }: CardProps) => (
   <div className={styles.card}>
     <div>
       <strong className={styles.label}>Convidado:</strong>
@@ -18,7 +18,11 @@ const Card = ({ nome, acompanhates, mensagem }: CardProps) => (
     </div>
     <div>
       <strong className={styles.label}>Acompanhates:</strong>
-      <span className={styles.resposta}> {acompanhates}</span>
+      {companheiros.map((companheiro, index) => (
+        <span className={styles.resposta} key={index}>
+          {companheiro}
+        </span>
+      ))}
     </div>
     <div>
       <strong className={styles.label}>Mensagem:</strong>
