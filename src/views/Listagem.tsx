@@ -18,10 +18,11 @@ const Card = ({ nome, companheiros, mensagem }: CardProps) => (
     </div>
     <div>
       <strong className={styles.label}>Acompanhates:</strong>
+      <br />
       {companheiros
         ? companheiros.map((companheiro, index) => (
             <span className={styles.resposta} key={index}>
-              {companheiro}
+              {companheiro};
             </span>
           ))
         : null}
