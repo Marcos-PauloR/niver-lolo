@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/api/confirmar",
-      "destination": "http://54.175.247.84:8080/convidados/confirmar"
+      "destination": "http://52.87.168.137:8080/convidados/confirmar"
     },
     {
       "source": "/api/confirmados",
-      "destination": "http://54.175.247.84:8080/convidados/confirmados"
+      "destination": "http://52.87.168.137:8080/convidados/confirmados"
     },
     {
       "source": "/(.*)",
