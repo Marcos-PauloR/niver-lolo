@@ -131,7 +131,10 @@ function Formulario() {
                   });
               })
               .catch((error) => {
-                toast("Erro:" + error.message);
+                toast("Tivemos Problema no Servidor, pedimos desculpas, tente mais tarde, caso persistir nos avise por favor", {
+                    icon: "🎉",
+                  });
+                  console.log(error)
               });
             reset({ acompanhates: "", mensagem: "", nome: "" });
             setListaAcompanhantes([]);
