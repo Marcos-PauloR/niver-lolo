@@ -144,8 +144,9 @@ function Formulario() {
         <div className={styles.localSpan}>
           <span>22 de Novembro ás 16:00</span>
           <div id="line1" className={styles.line1}></div>
-          <span>Alameda Fleuri Curado, nº159</span>
-          <span>No Salão de Festas do Condiminio Vida Sol</span>
+          <span>AnaLu Eventos e Decorações</span>
+          <span>R. Condé Laje, Jardim Buriti Sereno, 74944-400</span>
+          <span>Aparecida de Goiânia</span>
         </div>
       </div>
       <iframe
